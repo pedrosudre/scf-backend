@@ -28,7 +28,7 @@ public class FilmeResource {
     public ResponseEntity<Filme> create(@RequestBody Filme filme) {
         FilmeController filmeController = new FilmeController();
         if (!filmeController.isFilmeValido(filme)) {
-            return new ResponseEntity("Dados do filme inválidos", HttpStatus.INTERNAL_SERVER_ERROR)
+            return new ResponseEntity("Dados do filme inválidos", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         filme.setDataHoraCadastro(new Date());
@@ -45,7 +45,7 @@ public class FilmeResource {
     public ResponseEntity<Filme> editar(@RequestBody Filme filme) {
         FilmeController filmeController = new FilmeController();
         if (!filmeController.isFilmeValido(filme)) {
-            return new ResponseEntity("Nome do filme é inválido", HttpStatus.INTERNAL_SERVER_ERROR)
+            return new ResponseEntity("Nome do filme é inválido", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         filme = filmeRepository.save(filme);
