@@ -4,7 +4,7 @@ import com.example.backendapi.dominio.Filme;
 
 public class FilmeController {
 
-    public boolean isAlunoValido(Filme filme) {
+    public boolean isFilmeValido(Filme filme) {
         return isNomeValido(filme) && isGeneroValido(filme) && isProtagonistaValido(filme);
     }
 
