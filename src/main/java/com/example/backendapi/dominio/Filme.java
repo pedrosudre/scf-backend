@@ -20,8 +20,7 @@ public class Filme {
 
     private String protagonista;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date anoLancamento;
+    private String anoLancamento;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Date dataHoraCadastro;
@@ -62,11 +61,11 @@ public class Filme {
         this.protagonista = protagonista;
     }
 
-    public Date getAnoLancamento() {
+    public String getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(Date anoLancamento) {
+    public void setAnoLancamento(String anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 
@@ -77,4 +76,7 @@ public class Filme {
     public void setDataHoraCadastro(Date dataHoraCadastro) {
         this.dataHoraCadastro = dataHoraCadastro;
     }
+
+
+
 }

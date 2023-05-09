@@ -19,7 +19,7 @@ public class FilmeController {
     public boolean isGeneroValido(Filme filme) {
         if (filme.getGenero().isEmpty())
             return false;
-        if ((filme.getGenero().length() < 3) || filme.getGenero().length() > 20)
+        if ((filme.getGenero().length() < 3) || filme.getGenero().length() > 50)
             return false;
 
         return true;

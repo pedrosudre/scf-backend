@@ -4,4 +4,5 @@ import com.example.backendapi.dominio.Filme;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FilmeRepository extends JpaRepository<Filme, Integer> {
+    public Filme getByGenero(String genero);
 }
