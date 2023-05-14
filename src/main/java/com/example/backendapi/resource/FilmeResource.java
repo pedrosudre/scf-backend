@@ -24,9 +24,19 @@ public class FilmeResource {
         return filmeRepository.findAll();
     }
 
+    @GetMapping("/{genero}")
+    public List<Filme> getByGenero(@PathVariable String genero) {
+        return filmeRepository.getByGenero(genero);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Filme> create(@RequestBody Filme filme) {
         FilmeController filmeController = new FilmeController();
+
+        if (filmeRepository.existsByNome(filme.getNome())) {
+            return new ResponseEntity("O livro já existe!", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
         if (!filmeController.isFilmeValido(filme)) {
             return new ResponseEntity("Dados do filme inválidos", HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -1,8 +1,16 @@
 package com.example.backendapi.controller;
 
 import com.example.backendapi.dominio.Filme;
+import com.example.backendapi.repository.FilmeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public class FilmeController {
+
+    private FilmeRepository filmeRepository;
+
 
     public boolean isFilmeValido(Filme filme) {
         return isNomeValido(filme) && isGeneroValido(filme) && isProtagonistaValido(filme);
@@ -24,6 +32,7 @@ public class FilmeController {
 
         return true;
     }
+
 
     public boolean isProtagonistaValido(Filme filme) {
         if ((filme.getProtagonista().isEmpty()) || filme.getProtagonista().length() < 1)
